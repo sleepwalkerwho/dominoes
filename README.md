@@ -1,0 +1,1 @@
+To play domino, you need a full domino set and at least two players. In this project, the game is played by you and the computer.
