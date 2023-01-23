@@ -38,11 +38,23 @@ def find_snake(computer, player):
         computer.remove(domino[0])
     return player_turn, domino
 
-if __name__ == "__main__":
-    stock_pieces, computer_pieces, player_pieces = generate_stock_computer_player()
-    next_player, domino_snake = find_snake(computer_pieces, player_pieces)
-    print(f"Stock pieces: {stock_pieces}")
-    print(f"Computer pieces: {computer_pieces}")
-    print(f"Player pieces: {player_pieces}")
-    print(f"Domino snake: {domino_snake}")
-    print(f"Status: {next_player}")
+
+stock_pieces, computer_pieces, player_pieces = generate_stock_computer_player()
+next_player, domino_snake = find_snake(computer_pieces, player_pieces)
+
+print("======================================================================")
+print(f"Stock size: {len(stock_pieces)}")
+print(f"Computer pieces: {len(computer_pieces)}")
+print("")
+print(domino_snake[0])
+print("")
+player_count = 1
+for i in player_pieces:
+    print(f"{player_count}:{i}")
+    player_count += 1
+
+print("")
+if next_player == 'computer':
+    print("Status: Computer is about to make a move. Press Enter to continue...")
+else:
+    print("Status: It's your turn to make a move. Enter your command.")
